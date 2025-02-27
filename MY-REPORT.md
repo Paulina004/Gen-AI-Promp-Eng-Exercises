@@ -34,7 +34,7 @@ How do different prompt engineering techniques impact the effectiveness of LLMs 
 
 * This study employs a structured comparison of multiple prompt engineering techniques, such as few-shot prompting and meta-prompting, for coming up with requirement analysis for a use case.
     * The example use case used in this study is as follows:
-        > An AI-powered Discord chatbot to serve as a learning companion in a classroom. The bot will act as a study buddy by handling Q&A, explanations, and study tips. It should leverage natural language understanding and domain-specific knowledge to assist students. The bot must also be designed to prevent students from using it for cheating.`
+        > An AI-powered Discord chatbot to serve as a learning companion in a classroom. The bot will act as a study buddy by handling Q&A, explanations, and study tips. It should leverage natural language understanding and domain-specific knowledge to assist students. The bot must also be designed to prevent students from using it for cheating.
 
 #### Implications for Practice
 
@@ -61,10 +61,29 @@ The implications of using LLMs for requirement analysis in the SDLC (software de
 
 An experimental study was conducted where different prompt engineering techniques are applied to LLMs tasked with performing requirement analysis for a study chatbot system. Key aspects of the research method include:
 
-1. Testing a variety of LLMs across different configurations.
-2. Evaluating prompt engineering variations, including zero-shot, few-shot, and chain-of-thought prompting, using these models.
-3. Measuring performance using subjective ranking evaluation (see below).
-    
+1. Tested a variety of LLMs across different configurations.
+2. Evaluated prompt engineering techniques, including zero-shot, few-shot, and chain-of-thought prompting (see below), across 9 different models downloaded from Ollama.
+3. Measured performance using subjective ranking evaluation (see below).
+
+## Prompt Engineering Techniques 
+The following were the prompt engineering techniques tested in this study:
+* [Zero-Shot Prompting](#zero-shot-prompting)
+    * Presenting the task of requirement analysis without any prior examples. The model is expected to understand and generate requirements purely based on the given instruction.
+* [Few-Shot Prompting](#few-shot-prompting)
+    * Providing concise examples of requirements for other types of use cases (health care chatbot, for example) to guide the model toward generating structured outputs. 
+* [Prompt Template Prompting](#prompt-template-prompting)
+    * Providing predefined templates to construct effective prompts that guide the model to generate requirements tailored to the specific use case. 
+* [Chain-of-Thought Prompting](#chain-of-thought-cot-prompting)
+    * Providing step-by-step reasoning before arriving at complete requirement specifications, encouraging the model to break down complex requirements into logical components. 
+* [Meta Prompting](#meta-prompting)
+    * Explicitly structuring categories of requirements to direct the model's output organization. 
+* [Self-Consistency Prompting](#self-consistency-prompting)
+    * Presenting multiple attempts at requirement analysis and extracting consistent patterns to arrive at a more reliable set of requirements. 
+* [Prompt Chaining Prompting](#prompt-chaining-prompting)
+    * Breaking down the steps of creating requirement analysis into multiple prompts, where the output of one step serves as input for the next.
+* [Generate Knowledge Prompting](#generate-knowledge-prompting)
+    * Asking the model to create relevant background knowledge before using that information to generate the requirements.
+
 
 ## Ranking Scale
 
@@ -89,7 +108,7 @@ The results reveal notable differences in model performance across various promp
 
 ### Zero-Shot Prompting
 
-![Zero-Shot](./images/Zero-Shot.png)
+![Zero-Shot](./images/Zero-Shot.png){height=300}
 
 - Zero-shot prompting performed well, but not best.
 - The best models (**qwen2.5:3b, llama3:1:8b**) still managed decent results (4), but many struggled with achieving extra specificity in the requirement analysis.
@@ -97,7 +116,7 @@ The results reveal notable differences in model performance across various promp
 
 ### Few-Shot Prompting
 
-![Few-Shot](./images/Few-Shot.png)
+![Few-Shot](./images/Few-Shot.png){height=300}
 
 - Few-shot prompting performed exceptionally well, with **llama3.1:8b, llama3.2:3b, qwen2.5:3b, qwen2.5:14b, qwen2.5:32b,** and **qwen:14b** all achieving top scores (5).
 - This approach was one of the most consistent in improving response quality across models.
@@ -107,7 +126,7 @@ The results reveal notable differences in model performance across various promp
 
 ### Prompt Template Prompting
 
-![Prompt Template](./images/Prompt-Template.png)
+![Prompt Template](./images/Prompt-Template.png){height=300}
 
 - Performance was mixed, with strong scores for **llama3.1:8b, qwen2.5:1.5b,** and **qwen2.5:3b** (5), but lower results for smaller models and even some shockingly lower results for the larger **qwen** models.
 - The effectiveness of this method depended on the template's clarity and the model's ability to adapt structured input into detailed requirements.
@@ -116,7 +135,7 @@ The results reveal notable differences in model performance across various promp
 
 ### Chain-of-Thought (COT) Prompting
 
-![Chain-of-Thought](./images/COT.png)
+![Chain-of-Thought](./images/COT.png){height=300}
 
 - COT prompting significantly improved responses for **llama3.2:3b, qwen2.5:3b,** and **qwen2.5:14b**, all achieving the highest rating (5). This means that these models benefited from structured reasoning.
 - Smaller models like **gemma2:2b** struggled, producing only general responses (2).
@@ -125,7 +144,7 @@ The results reveal notable differences in model performance across various promp
 
 ### Meta Prompting
 
-![Meta](./images/Meta.png)
+![Meta](./images/Meta.png){height=300}
 
 - This method with Level 0 Automation yielded strong results for **llama3.2:3b and qwen2.5:32b**, achieving a perfect score (5).
 - However, shockingly, with Level 1 Automation meta prompting, most models struggled more. This could be for the following reasons: 
@@ -141,16 +160,16 @@ The results reveal notable differences in model performance across various promp
 
 ### Self-Consistency Prompting
 
-![Self-Consistency](./images/Self-Consistency.png)
+![Self-Consistency](./images/Self-Consistency.png){height=300}
 
 - This method was highly effective, with **qwen2.5:32b** and **qwen:0.5b** achieving perfect scores (5).
 - Most other models performed decently (scores: 3-4).
 - This indicates that multiple response generations may have helped improve quality, but some models lacked the refinement to self-correct.
 
 
-### Prompt Chaining
+### Prompt Chaining Prompting
 
-![Prompt Chaining](./images/Prompt-Chaining.png)
+![Prompt Chaining](./images/Prompt-Chaining.png){height=300}
 
 - Similar to few-shot prompting, this method was highly effective for many models, three of which achieved top ratings (5).
 - Mid-tier models like **qwen2.5:3b** and **qwen2.5:14b** also responded well (4).
@@ -159,7 +178,7 @@ The results reveal notable differences in model performance across various promp
 
 ### Generate Knowledge Prompting
 
-![Generate Knowledge Prompting](./images/Generate-Knowledge.png)
+![Generate Knowledge Prompting](./images/Generate-Knowledge.png){height=300}
 
 - This method had relatively poor results, with only **qwen2.5:3b** performing significantly better than others (4).
 - Many models scored lower (2), indicating difficulties in generating domain-specific knowledge without explicit direction.
