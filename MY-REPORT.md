@@ -7,6 +7,9 @@ This project explores how well LLMs can generate requirement analysis for softwa
 * Authors: [Paulina DeVito](https://www.linkedin.com/in/paulina-devito-fau/)
 * Academic Supervisor: [Dr. Fernando Koch](http://www.fernandokoch.me)
 
+> [!IMPORTANT] 
+> This project was created for learning purposes only. ***Please refrain from copying, sharing, and/or using any of this work.*** Thank you.
+
 
 ---
 
@@ -20,12 +23,12 @@ How do different prompt engineering techniques impact the effectiveness of LLMs 
 
 #### What Is Already Known About This Topic
 
-* You could use prompt engineering techniques to optimize LLM performance for specific tasks.
-* The challenges of selecting the right prompt engineering strategy depend on multiple factors such as task complexity and model complexity.
-* The possibility of improving LLM output consistency and accuracy depends on the combination of the prompt engineering technique, the prompt itself, the model parameters (temperature, context window, etc.), and model itself.
-* Different LLM architectures and configurations may respond differently to prompt variations.
-* Gen AI in the SDLC (software development lifecycle) process can be excellent for problem identification and solution ideation, but it may also have potential for requirement analysis.
-* Requirement analysis in software development traditionally relies on structured methodologies, but LLMs offer a new, flexible approach.
+- [x] You could use prompt engineering techniques to optimize LLM performance for specific tasks.
+- [x] The challenges of selecting the right prompt engineering strategy depend on multiple factors such as task complexity and model complexity.
+- [x] The possibility of improving LLM output consistency and accuracy depends on the combination of the prompt engineering technique, the prompt itself, the model parameters (temperature, context window, etc.), and model itself.
+- [x] Different LLM architectures and configurations may respond differently to prompt variations.
+- [x] Gen AI in the SDLC (software development lifecycle) process can be excellent for problem identification and solution ideation, but it may also have potential for requirement analysis.
+- [x] Requirement analysis in software development traditionally relies on structured methodologies, but LLMs offer a new, flexible approach.
 
 #### What This Research Is Exploring
 
@@ -37,16 +40,16 @@ How do different prompt engineering techniques impact the effectiveness of LLMs 
 
 The implications of using LLMs for requirement analysis in the SDLC (software development lifecycle) are as follows: 
 
-- It will be easier to document requirements.
+- [x] It will be easier to document requirements.
     - LLMs can generate structured requirement documents quickly, reducing manual effort.  
-- It will optimize the requirement gathering process.
+- [x] It will optimize the requirement gathering process.
     - Faster iterations and refinements can be made by leveraging automated suggestions.  
-- It will accelerate early-phase prototyping.
-    – Generated requirements can be used as a foundation for wireframes and system design.  
-- It will reduce inconsistencies in requirement specifications.
-    – With the right prompting, LLMs can enforce structured formats and standardize terminology.  
-- We will better understand gaps in functional and non-functional requirements.
-    – LLMs can prompt for missing elements, ensuring a comprehensive requirement set.  
+- [x] It will accelerate early-phase prototyping.
+    - Generated requirements can be used as a foundation for wireframes and system design.  
+- [x] It will reduce inconsistencies in requirement specifications.
+    - With the right prompting, LLMs can enforce structured formats and standardize terminology.  
+- [x] We will better understand gaps in functional and non-functional requirements.
+    - LLMs can prompt for missing elements, ensuring a comprehensive requirement set.  
 
 
 
@@ -72,7 +75,8 @@ GPT was prompted to give scores to each LLM requirement analysis response (see [
 - **2** (Poor): Very broad, lacks structure, minimal details relevant to the use case.
 - **1** (Very Poor): Irrelevant or nonsensical response.
 
-
+> [!NOTE] 
+> All results from each prompt technique & model run were logged in a CSV file, which can be found in the repo.
 
 ---
 
@@ -130,6 +134,9 @@ The results reveal notable differences in model performance across various promp
     - **Assumption Dependency** – The effectiveness depends on assumed knowledge specific to the use case and requirement analysis.  
     - **Complexity Management** – An extra layer of prompting may lead to convoluted or impractical responses.  
     - **Iteration Overhead** – Refining prompts iteratively to get the desired output is more cost inefficient than Level 0 Automation (no prompt refinement).  
+
+> [!NOTE] 
+> Level 0 Automation means a user asks a prompt to an LLM and receives a response. Level 1 Automation means a user asks an LLM for a prompt, which gets sent to another LLM to receive a response. Essentially, Level 1 Automation is "prompting for a prompt"!
 
 
 ### Self-Consistency Prompting
