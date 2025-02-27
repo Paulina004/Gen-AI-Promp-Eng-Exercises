@@ -4,13 +4,14 @@
 
 This project explores how well LLMs can generate requirement analysis for software development use cases, improving efficiency in the SDLC process.
 
-
 * Authors: [Paulina DeVito](https://www.linkedin.com/in/paulina-devito-fau/)
 * Academic Supervisor: [Dr. Fernando Koch](http://www.fernandokoch.me)
+
 
 ---
 
   
+
 # Research Question 
 
 How do different prompt engineering techniques impact the effectiveness of LLMs in performing requirement analysis across various models and parameters?
@@ -30,27 +31,32 @@ How do different prompt engineering techniques impact the effectiveness of LLMs 
 
 * This study employs a structured comparison of multiple prompt engineering techniques, such as few-shot prompting and meta-prompting, for coming up with requirement analysis for a use case.
     * The example use case used in this study is as follows:
-        * "An AI-powered Discord chatbot to serve as a learning companion in a classroom. The bot will act as a study buddy by handling Q&A, explanations, and study tips. It should leverage natural language understanding and domain-specific knowledge to assist students. The bot must also be designed to prevent students from using it for cheating."
-* A ranking framework was used to systematically evaluate how different LLMs performed requirement analysis for this example use case.
-* The authors of this study explored the impact of model selection, parameter tuning, and prompt engineering strategies on the accuracy and reliability of requirement analysis outputs.
+        > An AI-powered Discord chatbot to serve as a learning companion in a classroom. The bot will act as a study buddy by handling Q&A, explanations, and study tips. It should leverage natural language understanding and domain-specific knowledge to assist students. The bot must also be designed to prevent students from using it for cheating.`
 
 #### Implications for Practice
 
 The implications of using LLMs for requirement analysis in the SDLC (software development lifecycle) are as follows: 
 
-- **It will be easier to document requirements.** – LLMs can generate structured requirement documents quickly, reducing manual effort.  
-- **It will optimize the requirement gathering process.** – Faster iterations and refinements can be made by leveraging automated suggestions.  
-- **It will accelerate early-phase prototyping.** – Generated requirements can be used as a foundation for wireframes and system design.  
-- **It will reduce inconsistencies in requirement specifications.** – With the right prompting, LLMs can enforce structured formats and standardize terminology.  
-- **We will better understand gaps in functional and non-functional requirements.** – LLMs can prompt for missing elements, ensuring a comprehensive requirement set.  
+- It will be easier to document requirements.
+    - LLMs can generate structured requirement documents quickly, reducing manual effort.  
+- It will optimize the requirement gathering process.
+    - Faster iterations and refinements can be made by leveraging automated suggestions.  
+- It will accelerate early-phase prototyping.
+    – Generated requirements can be used as a foundation for wireframes and system design.  
+- It will reduce inconsistencies in requirement specifications.
+    – With the right prompting, LLMs can enforce structured formats and standardize terminology.  
+- We will better understand gaps in functional and non-functional requirements.
+    – LLMs can prompt for missing elements, ensuring a comprehensive requirement set.  
+
 
 
 ---
 
 
+
 # Research Method
 
-We are conducting an experimental study where different prompt engineering techniques are applied to LLMs tasked with performing requirement analysis for a study chatbot system. Key aspects of the research method include:
+An experimental study was conducted where different prompt engineering techniques are applied to LLMs tasked with performing requirement analysis for a study chatbot system. Key aspects of the research method include:
 
 1. Testing a variety of LLMs across different configurations.
 2. Evaluating prompt engineering variations, including zero-shot, few-shot, and chain-of-thought prompting, using these models.
@@ -58,16 +64,18 @@ We are conducting an experimental study where different prompt engineering techn
     
 
 ## Ranking Scale
-Scores were given to each LLM requirement analysis response as follows:
+
+GPT was prompted to give scores to each LLM requirement analysis response (see [how GPT-4o was prompted for evaluation](https://chatgpt.com/share/67bf9edb-e404-8010-b19b-97cedc7de293) for more details). Scores were delegated as follows:
 - **5** (Excellent): Clear, structured requirements, includes relevant technologies, considers feasibility, and addresses the "no cheating" constraint effectively.
 - **4** (Good): Mostly complete, has some tech specifics but lacks clarity or feasibility in some aspects.
 - **3** (Average): Covers general requirements but is vague, missing key details or lacks real-world tech.
 - **2** (Poor): Very broad, lacks structure, minimal details relevant to the use case.
 - **1** (Very Poor): Irrelevant or nonsensical response.
-[How GPT-4o Was Prompted For Evaluation](https://chatgpt.com/share/67bf9edb-e404-8010-b19b-97cedc7de293)
+
 
 
 ---
+
 
 
 # Results
@@ -144,7 +152,7 @@ The results reveal notable differences in model performance across various promp
 
 ### Generate Knowledge Prompting
 
-![Generate Knowledge Prompting](./images/Generate-Knowledge-Prompting.png)
+![Generate Knowledge Prompting](./images/Generate-Knowledge.png)
 
 - This method had relatively poor results, with only **qwen2.5:3b** performing significantly better than others (4).
 - Many models scored lower (2), indicating difficulties in generating domain-specific knowledge without explicit direction.
@@ -158,7 +166,9 @@ The results reveal notable differences in model performance across various promp
 4. **Model size may play a heavy role in the quality of responses regardless of advanced prompting techniques.** Larger models like **qwen2.5:3b and llama3:2:3b** typically did well, while smaller ones, such as **qwen:0.5b**, struggled.
 
 
+
 ---
+
 
 
 # Further Research
