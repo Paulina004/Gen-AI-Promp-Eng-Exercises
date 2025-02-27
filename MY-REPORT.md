@@ -108,7 +108,7 @@ The results reveal notable differences in model performance across various promp
 
 ### Zero-Shot Prompting
 
-![Zero-Shot](./images/Zero-Shot.png){height=300}
+![Zero-Shot](./images/Zero-Shot.png)
 
 - Zero-shot prompting performed well, but not best.
 - The best models (**qwen2.5:3b, llama3:1:8b**) still managed decent results (4), but many struggled with achieving extra specificity in the requirement analysis.
@@ -116,7 +116,7 @@ The results reveal notable differences in model performance across various promp
 
 ### Few-Shot Prompting
 
-![Few-Shot](./images/Few-Shot.png){height=300}
+![Few-Shot](./images/Few-Shot.png)
 
 - Few-shot prompting performed exceptionally well, with **llama3.1:8b, llama3.2:3b, qwen2.5:3b, qwen2.5:14b, qwen2.5:32b,** and **qwen:14b** all achieving top scores (5).
 - This approach was one of the most consistent in improving response quality across models.
@@ -126,7 +126,7 @@ The results reveal notable differences in model performance across various promp
 
 ### Prompt Template Prompting
 
-![Prompt Template](./images/Prompt-Template.png){height=300}
+![Prompt Template](./images/Prompt-Template.png)
 
 - Performance was mixed, with strong scores for **llama3.1:8b, qwen2.5:1.5b,** and **qwen2.5:3b** (5), but lower results for smaller models and even some shockingly lower results for the larger **qwen** models.
 - The effectiveness of this method depended on the template's clarity and the model's ability to adapt structured input into detailed requirements.
@@ -135,7 +135,7 @@ The results reveal notable differences in model performance across various promp
 
 ### Chain-of-Thought (COT) Prompting
 
-![Chain-of-Thought](./images/COT.png){height=300}
+![Chain-of-Thought](./images/COT.png)
 
 - COT prompting significantly improved responses for **llama3.2:3b, qwen2.5:3b,** and **qwen2.5:14b**, all achieving the highest rating (5). This means that these models benefited from structured reasoning.
 - Smaller models like **gemma2:2b** struggled, producing only general responses (2).
@@ -144,7 +144,7 @@ The results reveal notable differences in model performance across various promp
 
 ### Meta Prompting
 
-![Meta](./images/Meta.png){height=300}
+![Meta](./images/Meta.png)
 
 - This method with Level 0 Automation yielded strong results for **llama3.2:3b and qwen2.5:32b**, achieving a perfect score (5).
 - However, shockingly, with Level 1 Automation meta prompting, most models struggled more. This could be for the following reasons: 
@@ -160,7 +160,7 @@ The results reveal notable differences in model performance across various promp
 
 ### Self-Consistency Prompting
 
-![Self-Consistency](./images/Self-Consistency.png){height=300}
+![Self-Consistency](./images/Self-Consistency.png)
 
 - This method was highly effective, with **qwen2.5:32b** and **qwen:0.5b** achieving perfect scores (5).
 - Most other models performed decently (scores: 3-4).
@@ -169,7 +169,7 @@ The results reveal notable differences in model performance across various promp
 
 ### Prompt Chaining Prompting
 
-![Prompt Chaining](./images/Prompt-Chaining.png){height=300}
+![Prompt Chaining](./images/Prompt-Chaining.png)
 
 - Similar to few-shot prompting, this method was highly effective for many models, three of which achieved top ratings (5).
 - Mid-tier models like **qwen2.5:3b** and **qwen2.5:14b** also responded well (4).
@@ -178,7 +178,7 @@ The results reveal notable differences in model performance across various promp
 
 ### Generate Knowledge Prompting
 
-![Generate Knowledge Prompting](./images/Generate-Knowledge.png){height=300}
+![Generate Knowledge Prompting](./images/Generate-Knowledge.png)
 
 - This method had relatively poor results, with only **qwen2.5:3b** performing significantly better than others (4).
 - Many models scored lower (2), indicating difficulties in generating domain-specific knowledge without explicit direction.
